@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Varel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container" data-aos="fade-up">
+        <div class="text-content">
+            <h1 class="title">Selamat Datang di Portofolio Saya</h1>
+            <p>Halo! Saya Varel Indra, seorang mahasiswa Informatika Politeknik Negeri Manado yang tertarik dengan dunia teknologi dan pengembangan web.</p>
+            <button class="hover-button" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Let's Start</button>
+        </div>
+    </div>
+    
+    <section id="about" class="section" data-aos="fade-up">
+        <h2 style="color:#004080;">Tentang Saya</h2>
+        <div class="about-container">
+            <img src="anime_char_A.png" alt="Karakter Anime" class="anime-image">
+            <img src="its me.jpg" alt="Foto Saya" class="profile-image">
+            <p class="about-text"><span class="typing-text" id="typing"></span></p>
+            
+        </div>
+    </section>
+    <section id="data" class="section" data-aos="fade-up">
+        <h2 style="color:#004080;">Data Diri</h2>
+        <div class="data-container">
+            <ul class="data-list">
+                <li><strong>Nama:</strong> Varel Hizkia Indra</li>
+                <li><strong>Tempat, Tanggal Lahir:</strong> Manado, 23 Juli 2006</li>
+                <li><strong>Rumah Tempat Tinggal:</strong> Perum Pologriya Indah Blok B 04</li>
+            </ul>
+        </div>
+    </section>
+    <section id="experience" class="section" data-aos="fade-up">
+        <h2 style="color:#004080;">Pengalaman</h2>
+        <div class="experience-container">
+            <div class="experience-box">
+                <img src="experience 2.jpg" alt="Pengalaman 1" class="experience-image">
+                <p>Pengalaman saya di SMA Negeri 8 Manado dalam berbagai proyek akademik dan kegiatan sekolah.</p>
+            </div>
+            <div style="width: 80%; height: 4px; background: linear-gradient(to right, transparent, #004080, transparent); margin: 20px 0; border-radius: 2px;"></div>
+            <div class="experience-box">
+                <img src="experience 1.jpg" alt="Pengalaman 2" class="experience-image">
+                <p>Keikutsertaan saya dalam ekskul robotika, mengembangkan dan merancang robot inovatif.</p>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="wave"></div>
+        <p class="footer-text">© 2025 Varel Indra. Infirmi sunt ignavi.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/vrenxy.023?igsh=MWlrcXhwMXF4ZG9nZw== " class="social-icon">Instagram</a>
+        </div>
+        <p class="marquee-text">Terima kasih telah mengunjungi portofolio saya! Arigatou</p>
+        <button id="backToTop">⬆ Kembali ke Atas</button>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const textElement = document.getElementById("typing");
+    const text = "Saya adalah seorang mahasiswa Informatika dengan minat di bidang pengembangan teknologi. Saya suka belajar hal baru, terutama dalam dunia pemrograman dan robotika.";
+    let index = 0;
+
+
+    textElement.innerHTML = "<span style='opacity: 0;'>" + text + "</span>";
+
+    function typeText() {
+        if (index < text.length) {
+            textElement.innerHTML = text.substring(0, index + 1);
+            index++;
+            setTimeout(typeText, 50);
+        }
+    }
+
+    setTimeout(typeText, 500);
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let backToTop = document.getElementById("backToTop");
+    let footer = document.getElementById("footer");
+
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop > 300) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+    };
+
+    backToTop.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    footer.onclick = function () {
+        let colors = ["#004080", "#00264d", "#1a1a1a", "#6600cc"];
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        footer.style.background = randomColor;
+    };
+});
+    </script> 
+</body>
+</html>
